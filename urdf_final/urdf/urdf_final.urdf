@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="urdf_final">
+
+  <link name="base_footprint"/>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 0.08707" rpy="0 0 0"/>
+  </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0066615 0.0058712 -0.00894"
+        rpy="0 0 0" />
+      <mass
+        value="5.9561" />
+      <inertia
+        ixx="0.0084951"
+        ixy="3.3508E-07"
+        ixz="-3.3181E-08"
+        iyy="0.011054"
+        iyz="4.6098E-08"
+        izz="0.018501" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_final/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.66667 0.69804 0.76863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_final/meshes/base_link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Lidar">
+    <inertial>
+      <origin
+        xyz="0.0014226 -0.0011185 -0.001138"
+        rpy="0 0 0" />
+      <mass
+        value="0.078925" />
+      <inertia
+        ixx="2.502E-05"
+        ixy="-2.0625E-07"
+        ixz="-4.1658E-08"
+        iyy="2.1062E-05"
+        iyz="-4.4718E-07"
+        izz="4.3747E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_final/meshes/Lidar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_final/meshes/Lidar_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0.1446 0.0047209 0.09"
+      rpy="0 0 -1.5391" />
+    <parent
+      link="base_link" />
+    <child
+      link="Lidar" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Lifting_mechanism">
+    <inertial>
+      <origin
+        xyz="-2.9726E-12 3.0557E-11 -0.010193"
+        rpy="0 0 0" />
+      <mass
+        value="0.14645" />
+      <inertia
+        ixx="0.0001829"
+        ixy="3.3025E-06"
+        ixz="-4.2816E-20"
+        iyy="0.00028699"
+        iyz="-1.2698E-18"
+        izz="0.00046599" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_final/meshes/Lifting_mechanism.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_final/meshes/Lifting_mechanism_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lifting_mechanism_joint"
+    type="prismatic">
+    <origin
+      xyz="-0.00067783 0.0050686 0.075"
+      rpy="0 0 -1.5391" />
+    <parent
+      link="base_link" />
+    <child
+      link="Lifting_mechanism" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.035"
+      effort="50"
+      velocity="100" />
+  </joint>
+  <link
+    name="FLWheel">
+    <inertial>
+      <origin
+        xyz="-0.00014228 1.5267E-08 -6.159E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.30283" />
+      <inertia
+        ixx="0.00031146"
+        ixy="-7.2436E-10"
+        ixz="1.1831E-10"
+        iyy="0.00031145"
+        iyz="3.418E-10"
+        izz="0.0005644" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_final/meshes/FLWheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_final/meshes/FLWheel_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FLWheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.15277 0.13791 -0.025"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="FLWheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="FRWheel">
+    <inertial>
+      <origin
+        xyz="1.9025E-06 6.5018E-09 6.6063E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.30283" />
+      <inertia
+        ixx="0.00031146"
+        ixy="1.3617E-09"
+        ixz="2.1354E-11"
+        iyy="0.00031145"
+        iyz="-8.2651E-11"
+        izz="0.0005644" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_final/meshes/FRWheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_final/meshes/FRWheel_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FRWheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.15263 -0.12789 -0.025"
+      rpy="1.5708 0 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="FRWheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="BLWheel">
+    <inertial>
+      <origin
+        xyz="-2.0821E-06 9.6631E-09 -6.6054E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.30283" />
+      <inertia
+        ixx="0.00031145"
+        ixy="-1.5434E-09"
+        ixz="5.3038E-11"
+        iyy="0.00031145"
+        iyz="6.7759E-11"
+        izz="0.0005644" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_final/meshes/BLWheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_final/meshes/BLWheel_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BLWheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.15399 0.13791 -0.025"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="BLWheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="BRwheel">
+    <inertial>
+      <origin
+        xyz="0.000262 -5.326E-09 5.553E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.30283" />
+      <inertia
+        ixx="0.00051081"
+        ixy="8.382E-10"
+        ixz="-2.7698E-10"
+        iyy="0.00051081"
+        iyz="3.7209E-11"
+        izz="0.00092683"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_final/meshes/BRwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_final/meshes/BRwheel_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BRWheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.15373 -0.12788 -0.025"
+      rpy="1.5708 0 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="BRwheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+<!-- Transmission Blocks-->
+  <transmission name="FRWheel_joint_wheel_trans">
+       <type>transmission_interface/SimpleTransmission</type>
+       <actuator name="FRWheel_joint">
+         <hardwareInterface>VelocityJointInterface</hardwareInterface>
+         <mechanicalReduction>1</mechanicalReduction>
+       </actuator>
+       <joint name="FRWheel_joint">
+         <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+       </joint>
+  </transmission>
+
+  <transmission name="FLWheel_joint_wheel_trans">
+       <type>transmission_interface/SimpleTransmission</type>
+       <actuator name="FLWheel_joint">
+         <hardwareInterface>VelocityJointInterface</hardwareInterface>
+         <mechanicalReduction>1</mechanicalReduction>
+       </actuator>
+       <joint name="FLWheel_joint">
+         <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+       </joint>
+  </transmission>
+
+  <transmission name="BRWheel_joint_wheel_trans">
+       <type>transmission_interface/SimpleTransmission</type>
+       <actuator name="BRWheel_joint">
+         <hardwareInterface>VelocityJointInterface</hardwareInterface>
+         <mechanicalReduction>1</mechanicalReduction>
+       </actuator>
+       <joint name="BRWheel_joint">
+         <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+       </joint>
+  </transmission>
+
+  <transmission name="BLWheel_joint_wheel_trans">
+       <type>transmission_interface/SimpleTransmission</type>
+       <actuator name="BLWheel_joint">
+         <hardwareInterface>VelocityJointInterface</hardwareInterface>
+         <mechanicalReduction>1</mechanicalReduction>
+       </actuator>
+       <joint name="BLWheel_joint">
+         <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+       </joint>
+  </transmission>
+
+  <transmission name="Lifting_mechanism_joint_lifting_trans">
+       <type>transmission_interface/SimpleTransmission</type>
+       <actuator name="Lifting_mechanism_joint">
+         <hardwareInterface>VelocityJointInterface</hardwareInterface>
+         <mechanicalReduction>1</mechanicalReduction>
+       </actuator>
+       <joint name="Lifting_mechanism_joint">
+         <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+       </joint>
+  </transmission>
+
+<!-- Gazebo Plug-in -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename= "libgazebo_ros_control.so">
+  	 <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo> 
+
+<!-- Omni Plug-in -->
+  <gazebo>
+	<plugin name="omni_steering" filename="libgazebo_ros_planar_move.so">
+	  <commandTopic>cmd_vel</commandTopic>
+	  <odometryTopic>odom</odometryTopic>
+	  <odometryFrame>odom</odometryFrame>
+          <publishOdomTF>true</publishOdomTF>
+          <odometrySource>Final_maze</odometrySource>
+          <!--odometryRate>10.0</odometryRate-->
+          <updateRate>10.0</updateRate>
+          <robotBaseFrame>base_footprint</robotBaseFrame>
+          <publishTF>true</publishTF>
+	</plugin>
+  </gazebo>
+
+<!-- Sensor -->
+  <gazebo reference="Lidar">
+    <material>Gazebo/FlatBlack</material>
+    <sensor type="ray" name="rplidar">
+      <pose>0.0014226 -0.0011185 -0.001138 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14159</min_angle>
+            <max_angle>3.14159</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.15</min>
+          <max>6</max>
+          <resolution>0.5</resolution>
+        </range> 
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <always_on>1</always_on>
+      <plugin name="gazebo_ros_lds_lfcd_controller" filename="libgazebo_ros_laser.so">
+        <topicName>scan</topicName>
+        <frameName>Lidar</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+</robot>
